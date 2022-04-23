@@ -433,12 +433,28 @@ def ir_ghost_50(input_size):
 def ir_ghost_101(input_size):
     """Constructs a ir-101 with last stage change to ghost module model."""
     model = Backbone(input_size, 100, 'ir')
-
     return model
 
 
 def ir_ghost_152(input_size):
     """Constructs a ir-152  with last stage change to ghost module model."""
     model = Backbone(input_size, 152, 'ir')
+    return model
 
+
+def irse_ghost_50(input_size):
+    """Constructs a irse-50 with last stage change to ghost module model."""
+    model = Backbone(input_size, 50, 'ir_se')
+    return model
+
+
+def irse_ghost_101(input_size):
+    """Constructs a irse-101 with last stage change to ghost module model."""
+    model = Backbone(input_size, 100, 'ir_se')
+    return model
+
+
+def irse_ghost_152(input_size):
+    """Constructs a irse-152  with last stage change to ghost module model."""
+    model = Backbone(input_size, 152, 'ir_se')
     return model

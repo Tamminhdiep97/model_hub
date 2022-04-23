@@ -3,9 +3,14 @@ INPUT_SIZE = [112, 112]
 
 # === CONVERT ONNX CONFIG ===
 # MODEL SUPPORT
-# ir-50, ir-101, ir-152, irse-50, irse-101, irse-152, ghostnet, ir_ghost_50,
-# ir_ghost_101, ir_ghost_152, irse_ghost_50, irse_ghost_101, irse_ghost_152
-MODEL = ''
+# IR_50, IR_101, IR_152,
+# IRSE_50, IRSE_101, IRSE_152,
+# IR_GHOST_50, IR_GHOST_101, IR_GHOST_152,
+# IRSE_GHOST_50, IRSE_GHOST_101, IRSE_GHOST_152
+# RESNET_50, RESNET_101, RESNET_152
+# ALL
+
+MODEL = 'ALL'
 
 # ==== TEST CONFIG ===
 WEIGHT_PATH = 'weight/'
