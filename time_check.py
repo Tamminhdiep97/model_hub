@@ -2,14 +2,9 @@ import os
 import time
 
 import numpy as np
-import onnxruntime as ort
 
 import config as conf
-
-
-def load_model(path):
-    model = ort.InferenceSession(path)
-    return model
+import utils
 
 
 def test_time(model):
@@ -36,5 +31,5 @@ if __name__ == '__main__':
         if _file.find('onnx') != -1:
             path_model = os.path.join(conf.WEIGHT_PATH, _file)
             print('Load model: {}'.format(_file))
-            model = load_model(path_model)
+            model = utils.load_model(path_model)
             test_time(model)
