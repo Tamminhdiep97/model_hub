@@ -20,7 +20,7 @@ def test_time(model):
         sum_time += time_end - time_start
     print('TEST ON {} SAMPLES DONE'.format(conf.NUM_SAMPLES))
     print(
-        'Time inference avarage for each [1, 3, 112, 112] numpy tensor: {}s'.format(
+        'Each [1, 3, 112, 112] numpy tensor took: {}s on avarage'.format(
             sum_time / conf.NUM_SAMPLES
         )
     )

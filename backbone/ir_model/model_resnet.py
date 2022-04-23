@@ -104,7 +104,9 @@ class ResNet(Module):
             224,
         ], 'input_size should be [112, 112] or [224, 224]'
         self.inplanes = 64
-        self.conv1 = Conv2d(3, 64, kernel_size=7, stride=2, padding=3, bias=False)
+        self.conv1 = Conv2d(
+            3, 64, kernel_size=7, stride=2, padding=3, bias=False
+        )
         self.bn1 = BatchNorm2d(64)
         self.relu = ReLU(inplace=True)
         self.maxpool = MaxPool2d(kernel_size=3, stride=2, padding=1)
@@ -123,14 +125,18 @@ class ResNet(Module):
 
         for m in self.modules():
             if isinstance(m, Conv2d):
-                nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
+                nn.init.kaiming_normal_(
+                    m.weight, mode='fan_out', nonlinearity='relu'
+                )
             elif isinstance(m, BatchNorm2d):
                 nn.init.constant_(m.weight, 1)
                 nn.init.constant_(m.bias, 0)
 
         # Zero-initialize the last BN in each residual branch,
-        # so that the residual branch starts with zeros, and each residual block behaves like an identity.
-        # This improves the model by 0.2~0.3% according to https://arxiv.org/abs/1706.02677
+        # so that the residual branch starts with zeros, and each residual
+        # block behaves like an identity.
+        # This improves the model by
+        # 0.2~0.3% according to https://arxiv.org/abs/1706.02677
         if zero_init_residual:
             for m in self.modules():
                 if isinstance(m, Bottleneck):
