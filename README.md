@@ -34,7 +34,19 @@ change config in **config.py** base on what you want to test
 
 - In experiment with **IR-50** network, i replaced last layer of original network with the last layer of Ghostnet, result in the decreasing up to **10 million** parameters
 
-- In the time Testing of previous models, the modified one (**IR-GHOST-50**) has the average runtime on 100 (**112x112**) tensors lower than the Original network (**IR-50**) by **half**.
+IR-50 parameters
+
+![IR-50_parameters](image_log/IR-50_parameters.png)
+
+IR-GHOST-50 parameters
+
+![IR-GHOST-50 parameters ](image_log/IR-GHOST-50%20parameter.png)
+
+- In the time Testing of previous models, the modified one (**IR-GHOST-50**) has the average runtime on 1000 (**[1, 3, 112, 112]**) numpy tensors lower than the Original network (**IR-50**) nearly by **half**.
+
+Time Test:
+
+![Time testing](image_log/time_check.png)
 
 **4. Experiments Training on ***modify*** (augmentation, mask) *Glint360k:***
 
