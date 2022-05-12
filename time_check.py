@@ -2,6 +2,7 @@ import os
 import time
 
 import numpy as np
+from tqdm import tqdm
 
 import config as conf
 import utils
@@ -9,7 +10,7 @@ import utils
 
 def test_time(model):
     sum_time = 0
-    for _ in range(0, conf.NUM_SAMPLES):
+    for _ in tqdm(range(0, conf.NUM_SAMPLES)):
         input_tensor = np.random.randn(1, 3, 112, 112).astype(np.float32)
         time_start = time.time()
         _ = model.run(
