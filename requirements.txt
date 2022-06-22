@@ -1,4 +1,4 @@
-numpy==1.21.0
+numpy==1.22.0
 onnxruntime==1.10.0
 ptflops
 torchsummary==1.5.1
